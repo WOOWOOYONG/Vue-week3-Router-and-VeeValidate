@@ -1,0 +1,1 @@
+import{_ as s,r as t,o as r,c,a as e,d as o,w as l,F as u,e as _}from"./index-20b77472.js";const i={},d=e("h1",null,"後台頁面",-1);function m(f,p){const n=t("RouterLink"),a=t("RouterView");return r(),c(u,null,[d,e("ul",null,[e("li",null,[o(n,{to:"/admin/userstable"},{default:l(()=>[_("後台使用者")]),_:1})])]),e("div",null,[o(a)])],64)}const V=s(i,[["render",m]]);export{V as default};
