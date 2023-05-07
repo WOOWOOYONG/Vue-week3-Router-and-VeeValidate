@@ -1,10 +1,16 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
+<script>
+export default {
+  computed: {
+    showNavbar() {
+      return this.$route.meta.showNavbar
+    }
+  }
+}
 </script>
 
 <template>
   <header>
-    <div class="wrapper">
+    <div class="wrapper" v-if="showNavbar">
       <nav>
         <ul class="navbar">
           <li><RouterLink to="/">首頁</RouterLink></li>

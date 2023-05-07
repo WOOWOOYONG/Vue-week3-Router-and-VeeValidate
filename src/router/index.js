@@ -8,7 +8,8 @@ const router = createRouter({
       name: 'home',
       component: () => import('@/views/HomeView.vue'),
       meta: {
-        title: 'Vue-week3-hw'
+        title: 'Vue-week3-hw',
+        showNavbar: true
       }
     },
     {
@@ -16,7 +17,8 @@ const router = createRouter({
       name: 'products',
       component: () => import('@/views/ProductsView.vue'),
       meta: {
-        title: '產品'
+        title: '產品',
+        showNavbar: true
       }
     },
     {
@@ -24,7 +26,8 @@ const router = createRouter({
       name: 'product',
       component: () => import('@/views/ProductView.vue'),
       meta: {
-        title: '產品內頁'
+        title: '產品內頁',
+        showNavbar: true
       }
     },
     {
@@ -32,15 +35,17 @@ const router = createRouter({
       name: 'admin',
       component: () => import('@/views/admin/AdminLayout.vue'),
       meta: {
-        title: '後台'
+        title: '後台',
+        showNavbar: false
       },
       children: [
         {
-          path: 'userstable',
-          name: 'userstable',
+          path: 'users',
+          name: 'users',
           component: () => import('@/views/admin/UsersTable.vue'),
           meta: {
-            title: '後台使用者'
+            title: '後台使用者',
+            showNavbar: false
           }
         }
       ]
@@ -50,7 +55,8 @@ const router = createRouter({
       name: 'validate',
       component: () => import('@/views/ValidateView.vue'),
       meta: {
-        title: '表單'
+        title: '表單',
+        showNavbar: true
       }
     },
     {

@@ -92,8 +92,8 @@
             v-model="userNote"
           ></VField>
         </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit" :disabled="!meta.valid">送出</button>
+        <div class="col-12 text-center mt-5">
+          <button class="btn btn-success" type="submit" :disabled="!meta.valid">送出</button>
         </div>
       </VForm>
     </div>
@@ -101,6 +101,8 @@
 </template>
 
 <script>
+import { ErrorMessage } from 'vee-validate'
+
 export default {
   data() {
     return {
@@ -113,6 +115,9 @@ export default {
   },
   methods: {
     isPhone(value) {
+      if (!value) {
+        return '手機為必填'
+      }
       const phoneNumber = /^(09)[0-9]{8}$/
       return phoneNumber.test(value) ? true : '要輸入09開頭的手機號碼喔'
     },
@@ -126,7 +131,8 @@ export default {
         return true
       }
     }
-  }
+  },
+  components: { ErrorMessage }
 }
 </script>
 

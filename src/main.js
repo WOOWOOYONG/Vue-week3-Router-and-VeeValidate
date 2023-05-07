@@ -15,10 +15,23 @@ Object.keys(AllRules).forEach((rule) => {
   defineRule(rule, AllRules[rule])
 })
 
+// configure({
+//   generateMessage: localize({ zh_TW: zhTW }),
+//   validateOnInput: true // 輸入文字時，就立即進行驗證
+// })
+
 configure({
-  generateMessage: localize({ zh_TW: zhTW }),
+  generateMessage: localize(
+    { zh_TW: zhTW },
+    {
+      messages: {
+        required: '{field} 必須填寫'
+      }
+    }
+  ),
   validateOnInput: true // 輸入文字時，就立即進行驗證
 })
+
 setLocale('zh_TW')
 
 const app = createApp(App)
