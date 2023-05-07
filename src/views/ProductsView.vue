@@ -30,7 +30,7 @@ export default {
           name: 'book1',
           image: 'https://i.pinimg.com/originals/bf/3c/f2/bf3cf230331995da8ee6d568e3289dce.jpg',
           about:
-            '《H2》是安達充創作的日本漫畫。g故事以日本高中棒球為題材，圍繞著二男二女，四個主人公之間的友情和愛情而展開的故事。'
+            '《H2》是安達充創作的日本漫畫。故事以日本高中棒球為題材，圍繞著二男二女，四個主人公之間的友情和愛情而展開的故事。'
         },
         {
           id: 2,
