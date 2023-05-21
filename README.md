@@ -24,3 +24,7 @@ NotFound.vue      -> 輸入錯誤網址時呈現的頁面 /not-found
 - 驗證錯誤的樣式、驗證訊息呈現中文
 - input 與 label 對應
 - 按鈕在完成驗證前是 disabled 的狀態
+
+### 3. Demo
+
+- [Github Pages](https://woowooyong.github.io/Vue-week3-Router-and-VeeValidate/#/)
