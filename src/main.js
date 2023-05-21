@@ -15,11 +15,6 @@ Object.keys(AllRules).forEach((rule) => {
   defineRule(rule, AllRules[rule])
 })
 
-// configure({
-//   generateMessage: localize({ zh_TW: zhTW }),
-//   validateOnInput: true // 輸入文字時，就立即進行驗證
-// })
-
 configure({
   generateMessage: localize(
     { zh_TW: zhTW },

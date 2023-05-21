@@ -1,35 +1,26 @@
-# vue-week3-vee-validate
+# Vue-Router & VeeValidate 作業
 
-This template should help get you started developing with Vue 3 in Vite.
+### 1. 練習使用 Vue Router 製作分頁
 
-## Recommended IDE Setup
+```
+網頁頁面：
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+FrontLayout.vue       -> 前台 Navbar
+ - HomeView.vue       -> 首頁 /
+ - ProductsView.vue   -> 產品頁 /products
+ - ProductView.vue    -> 產品內頁 /product/:id
 
-## Customize configuration
+AdminLayout.vue         -> 後台 Navbar
+ - ProductsTable.vue  -> 後台產品頁 /admin
+ - UsersTable.vue     -> 後台使用者頁 /admin/users
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+NotFound.vue      -> 輸入錯誤網址時呈現的頁面 /not-found
 ```
 
-### Compile and Hot-Reload for Development
+### 2. 練習 Vee Validate v4
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- 套用 Bootstrap 樣式
+- 表單內容包含姓名、信箱、電話、備註(textarea)、選擇寄送方式(select)、送出按鈕
+- 驗證錯誤的樣式、驗證訊息呈現中文
+- input 與 label 對應
+- 按鈕在完成驗證前是 disabled 的狀態

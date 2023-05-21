@@ -1,3 +1,30 @@
+<script setup>
+import { ErrorMessage } from 'vee-validate'
+
+import { reactive } from 'vue'
+const userData = reactive({
+  name: '',
+  email: '',
+  phone: '',
+  delivery: '',
+  note: ''
+})
+
+const isPhone = (value) => {
+  if (!value) {
+    return '手機為必填'
+  }
+  const phoneNumber = /^(09)[0-9]{8}$/
+  return phoneNumber.test(value) ? true : '要輸入09開頭的手機號碼喔'
+}
+
+const onSubmit = (values, { resetForm }) => {
+  console.log('送出表單')
+  console.log(values)
+  resetForm()
+}
+</script>
+
 <template>
   <main>
     <div class="validate_form">
@@ -12,13 +39,12 @@
           <VField
             name="name"
             type="text"
-            v-model="userName"
+            v-model="userData.name"
             class="form-control"
-            :class="{ 'is-invalid': errors['name'], 'is-valid': !errors['name'] && userName }"
+            :class="{ 'is-invalid': errors['name'], 'is-valid': !errors['name'] && userData.name }"
             id="name"
             label="姓名"
             rules="required"
-            as="input"
           />
           <ErrorMessage name="name" :class="{ 'invalid-feedback ': errors['name'] }" />
           <div class="valid-feedback">Looks good!</div>
@@ -28,13 +54,15 @@
           <VField
             name="email"
             type="email"
-            v-model="userEmail"
+            v-model="userData.email"
             class="form-control"
-            :class="{ 'is-invalid': errors['email'], 'is-valid': !errors['email'] && userEmail }"
+            :class="{
+              'is-invalid': errors['email'],
+              'is-valid': !errors['email'] && userData.email
+            }"
             id="email"
             label="信箱"
             rules="required|email"
-            as="input"
           />
           <ErrorMessage name="email" :class="{ 'invalid-feedback ': errors['email'] }" />
           <div class="valid-feedback">Looks good!</div>
@@ -45,13 +73,15 @@
             name="phone"
             type="tel"
             maxlength="10"
-            v-model="userPhone"
+            v-model="userData.phone"
             class="form-control"
-            :class="{ 'is-invalid': errors['phone'], 'is-valid': !errors['phone'] && userPhone }"
+            :class="{
+              'is-invalid': errors['phone'],
+              'is-valid': !errors['phone'] && userData.phone
+            }"
             id="phone"
             label="電話"
             aria-describedby="inputGroupPrepend"
-            as="input"
             :rules="isPhone"
           />
           <ErrorMessage name="phone" :class="{ 'invalid-feedback ': errors['phone'] }" />
@@ -61,11 +91,11 @@
           <label for="delivery" class="form-label">選擇寄送方式</label>
           <VField
             name="delivery"
-            v-model="userDelivery"
+            v-model="userData.delivery"
             class="form-select"
             :class="{
               'is-invalid': errors['delivery'],
-              'is-valid': !errors['delivery'] && userDelivery
+              'is-valid': !errors['delivery'] && userData.delivery
             }"
             id="delivery"
             label="寄送方式"
@@ -89,7 +119,7 @@
             class="form-control"
             placeholder="有什麼想說的嗎？"
             as="textarea"
-            v-model="userNote"
+            v-model="userData.note"
           ></VField>
         </div>
         <div class="col-12 text-center mt-5">
@@ -99,42 +129,6 @@
     </div>
   </main>
 </template>
-
-<script>
-import { ErrorMessage } from 'vee-validate'
-
-export default {
-  data() {
-    return {
-      userName: '',
-      userEmail: '',
-      userPhone: '',
-      userDelivery: '',
-      userNote: ''
-    }
-  },
-  methods: {
-    isPhone(value) {
-      if (!value) {
-        return '手機為必填'
-      }
-      const phoneNumber = /^(09)[0-9]{8}$/
-      return phoneNumber.test(value) ? true : '要輸入09開頭的手機號碼喔'
-    },
-    onSubmit(values, { resetForm }) {
-      console.log('送出表單')
-      console.log(values)
-      resetForm()
-    },
-    isValid() {
-      if (this.userEmail) {
-        return true
-      }
-    }
-  },
-  components: { ErrorMessage }
-}
-</script>
 
 <style>
 .validate_form {
