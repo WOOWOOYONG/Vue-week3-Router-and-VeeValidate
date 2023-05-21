@@ -1,0 +1,1 @@
+import{_ as l,o as n,c as t,F as c,b as e}from"./index-48a4de9d.js";const o={},s=e("h1",null,"後台產品頁",-1),a=e("ul",null,[e("li",null,"產品1"),e("li",null,"產品2"),e("li",null,"產品3")],-1);function r(_,u){return n(),t(c,null,[s,a],64)}const d=l(o,[["render",r]]);export{d as default};
